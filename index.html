@@ -4,7 +4,19 @@
 <title>FaceMe</title>
 <link href="./DreamBooth_files/style.css" rel="stylesheet">
 </head>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Center GIF</title>
+  <style>
+    .content {
+      text-align: center; /* 水平居中 */
+    }
+    .content img {
+      display: inline-block; /* 保持图片为行内块元素 */
+    }
+  </style>
+</head>
 <head>
   <meta charset="UTF-8">
   <title>MathJax Example</title>
@@ -40,6 +52,13 @@
     Make the people in the photo look like you and those you are familiar with. Using a single or a few reference images,
     we can restore realistic images without any fine-tuning for identity. 
   </h3>
+  
+  <img src="FaceMe_files/demo.gif" alt="Example GIF">
+  <h3 style="text-align: center; font-style: italic;">
+    FaceMe can effectively maintain identity consistency as
+    degradation level increases, while also balancing the dependency between the low-quality input and the reference image.
+  </h3>
+
   <p style="text-align: center; font-size: 1.5em;">
       <a href="" target="_blank">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="" target="_blank">[Dataset]</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,6 +66,7 @@
   </p>
 
 </div>
+
 
 <div class="content">
   <h2 style="text-align:center;">Abstract</h2>
@@ -79,6 +99,7 @@
     For each image synthesis, a facial image is randomly selected from each subset to serve as the pose reference \(x_{pose}\).
   </p>
 </div>
+
 <div class="content">
   <h2 style="text-align:center;">Results</h2>
   <h2>Quantitative Comparisons</h2>
