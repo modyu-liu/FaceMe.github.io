@@ -19,6 +19,62 @@
 </head>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Image Comparison</title>
+  <style>
+      /* 样式调整 */
+      .columns {
+          display: flex;
+          flex-wrap: wrap; /* 允许多列换行 */
+          justify-content: center;
+      }
+      .column {
+          flex-basis: 25%; /* 每个图像占父容器宽度的 25% */
+          max-width: 25%; /* 最大宽度也是 25% */
+          box-sizing: border-box; /* 包含内边距和边框 */
+          padding: 10px; /* 图像之间的间距 */
+      }
+      .img-comp-container {
+          position: relative;
+          width: auto;
+          height: auto;
+          margin-bottom: 10px;
+      }
+      .img-comp-img img {
+          display: block;
+          width: 100%;
+          height: auto;
+      }
+      .img-comp-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 50%; /* 初始覆盖 50% */
+          overflow: hidden;
+      }
+      .img-comp-overlay img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: auto;
+          height: 100%;
+      }
+      .img-comp-slider {
+          position: absolute;
+          z-index: 9;
+          cursor: ew-resize;
+          background-color: #000;
+          height: 100%;
+          width: 5px;
+          top: 0;
+          left: 50%; /* 初始在中间 */
+      }
+  </style>
+</head>
+
+<head>
+  <meta charset="UTF-8">
   <title>MathJax Example</title>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -118,6 +174,188 @@
     <img src="./FaceMe_files/real_result.png" alt="real_result" style="width: 100%;">
   </figure>
 </div>
+
+<div class="content">
+  <h2 style="text-align:center;">Interactive Comparison</h2>
+  <div class="columns" id="image-container"></div>
+
+    <script>
+        // 图片路径数据：数组包含输入和输出图片的路径
+        const images = [
+            { input: "./FaceMe_files/compare_result/lq/Danny_Green_0001.jpg", output: "./FaceMe_files/compare_result/sr/Danny_Green_0001.png" },
+            { input: "./FaceMe_files/compare_result/lq/Svend_Aage_Jensby_0001.jpg", output: "./FaceMe_files/compare_result/sr/Svend_Aage_Jensby_0001.png" },
+            { input: "./FaceMe_files/compare_result/lq/Vaclav_Havel_0001.jpg", output: "./FaceMe_files/compare_result/sr/Vaclav_Havel_0001.png" },
+            { input: "./FaceMe_files/compare_result/lq/Yasushi_Chimura_0001.jpg", output: "./FaceMe_files/compare_result/sr/Yasushi_Chimura_0001.png" },
+            { input: "./FaceMe_files/compare_result/lq/00016_00.png", output: "./FaceMe_files/compare_result/sr/00016_00.png" },
+            { input: "./FaceMe_files/compare_result/lq/00101_00.png", output: "./FaceMe_files/compare_result/sr/00101_00.png" },
+            { input: "./FaceMe_files/compare_result/lq/10008_02.png", output: "./FaceMe_files/compare_result/sr/10008_02.png" },
+            { input: "./FaceMe_files/compare_result/lq/10009_02.png", output: "./FaceMe_files/compare_result/sr/10009_02.png" },
+            { input: "./FaceMe_files/compare_result/lq/0761.png", output: "./FaceMe_files/compare_result/sr/0761.png" },
+            { input: "./FaceMe_files/compare_result/lq/0032.png", output: "./FaceMe_files/compare_result/sr/0032.png" },
+            { input: "./FaceMe_files/compare_result/lq/0909.png", output: "./FaceMe_files/compare_result/sr/0909.png" },
+            { input: "./FaceMe_files/compare_result/lq/0285.png", output: "./FaceMe_files/compare_result/sr/0285.png" },
+        
+          ];
+
+        // 获取父容器
+        const container = document.getElementById("image-container");
+
+        // 动态生成图片结构
+        images.forEach(pair => {
+            const column = document.createElement("div");
+            column.className = "column";
+
+            column.innerHTML = `
+                <div class="img-comp-container">
+                    <div class="img-comp-img">
+                        <img src="${pair.input}" alt="Input Image">
+                    </div>
+                    <div class="img-comp-img img-comp-overlay">
+                        <img src="${pair.output}" alt="Output Image">
+                    </div>
+                    <div class="img-comp-slider"></div>
+                </div>
+            `;
+            container.appendChild(column);
+        });
+
+        // 添加交互功能
+        const initComparisons = () => {
+            const containers = document.querySelectorAll('.img-comp-container');
+            containers.forEach(container => {
+                const overlay = container.querySelector('.img-comp-overlay');
+                const slider = container.querySelector('.img-comp-slider');
+
+                // 初始化变量
+                let isDragging = false;
+
+                // 鼠标事件
+                slider.addEventListener('mousedown', startDrag);
+                window.addEventListener('mousemove', drag);
+                window.addEventListener('mouseup', endDrag);
+
+                // 移动端触控事件
+                slider.addEventListener('touchstart', startDrag);
+                window.addEventListener('touchmove', drag);
+                window.addEventListener('touchend', endDrag);
+
+                function startDrag(e) {
+                    isDragging = true;
+                    drag(e);
+                }
+
+                function drag(e) {
+                    if (!isDragging) return;
+
+                    const rect = container.getBoundingClientRect();
+                    const xPos = e.touches ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+
+                    // 限制滑块范围
+                    const width = container.offsetWidth;
+                    const sliderPos = Math.max(0, Math.min(xPos, width));
+
+                    // 更新覆盖层和滑块的位置
+                    overlay.style.width = sliderPos + "px";
+                    slider.style.left = sliderPos + "px";
+                }
+
+                function endDrag() {
+                    isDragging = false;
+                }
+            });
+        };
+
+        // 初始化所有图片的对比功能
+        initComparisons();
+    </script>
+<!--     
+  <div class="columns is-centered">
+    <div class="column">
+      <div class="img-comp-container" style="margin-bottom: 10px;">
+        <div class="img-comp-img">
+          <img src="static/imgs/1_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/1_ours.png" width="224" height="224">
+        </div>
+      </div>
+      <div class="img-comp-container">
+        <div class="img-comp-img">
+          <img src="static/imgs/3_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/3_ours.png" width="224" height="224">
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="img-comp-container" style="margin-bottom: 10px;">
+        <div class="img-comp-img">
+          <img src="static/imgs/2_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/2_ours.png" width="224" height="224">
+        </div>
+      </div>
+      <div class="img-comp-container">
+        <div class="img-comp-img">
+          <img src="static/imgs/4_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/4_ours.png" width="224" height="224">
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="img-comp-container" style="margin-bottom: 10px;">
+        <div class="img-comp-img">
+          <img src="static/imgs/f1_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/f1_ours.png" width="224" height="224">
+        </div>
+      </div>
+      <div class="img-comp-container">
+        <div class="img-comp-img">
+          <img src="static/imgs/l1_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/l1_ours.png" width="224" height="224">
+        </div>
+      </div>
+    </div>
+
+    <div class="column" >
+      <div class="img-comp-container" style="margin-bottom: 10px;">
+        <div class="img-comp-img">
+          <img src="static/imgs/f2_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/f2_ours.png" width="224" height="224">
+        </div>
+      </div>
+      <div class="img-comp-container">
+        <div class="img-comp-img">
+          <img src="static/imgs/p2_input.png" width="224" height="224">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="static/imgs/p2_ours.png" width="224" height="224">
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+
+  <p>
+    You can slide the images to clearly observe the differences between the input on the right and the output on the left. 
+    The first row is from the LFW-Test; the second row is from the WebPhoto-Test; 
+    and the third row is from the Wider-Test. 
+    FaceMe can restore high-fidelity and high-quality images, while previous methods produce the unrealistic artifacts.
+  </p>
+</div>
+
 <div class="content">
   <h2>BibTex</h2>
   <!-- <code> @article{ruiz2022dreambooth,<br>
