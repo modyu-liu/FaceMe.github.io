@@ -14,20 +14,28 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: '22'  # 指定 Node.js 版本
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2  # 设置 PNPM
+        with:
+          version: 9.15.0  # 指定 PNPM 版本
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: pnpm install  # 使用 PNPM 安装依赖
 
       - name: Build project
-        run: npm run build
+        run: pnpm run build  # 构建项目
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
           path: ./dist
+
 
   deploy:
     name: Deploy
