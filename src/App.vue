@@ -22,7 +22,7 @@ onMounted(() => {
     <a href="" style="font-size: 28px;" >Hyunhee Park<sup>4</sup></a>, 
     <a href="" style="font-size: 28px;" >Zikun Liu<sup>3</sup></a>,
     <a href="https://scholar.google.com/citations?user=RZLYwR0AAAAJ&hl=zh-CN&oi=ao" style="font-size: 28px;" >Chun-Le Guo<sup>1,2,&dagger;</sup></a>,
-    <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1,2</sup></a>,
+    <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1,2</sup></a>
     <br><br>
 
     <span style="font-size: 20px; font-weight: bold; ;"><sup>1</sup>VCIP, CS, Nankai University, </span>
@@ -110,7 +110,7 @@ onMounted(() => {
     </ImgComparisonSlider>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
     <ImgComparisonSlider>
       <img
         slot="first"
@@ -123,7 +123,7 @@ onMounted(() => {
         src="/pair_result/zhou/20241217133023.png"
       />
     </ImgComparisonSlider>
-  </div>
+  </div> -->
 
 
   </div>
