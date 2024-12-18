@@ -17,16 +17,18 @@ onMounted(() => {
   <p id="authors" style="text-align: center;">
     <a href="" style="font-size: 28px;" >Siyu Liu<sup>1,*</sup></a>, 
     <a href="https://adam-duan.github.io/" style="font-size: 28px;" >Zheng-Peng Duan<sup>1,*</sup></a>, 
-    <a href="" style="font-size: 28px;" >Jia OuYang<sup>2</sup></a>, 
+    <a href="" style="font-size: 28px;" >Jia OuYang<sup>3</sup></a>, 
     <a href="" style="font-size: 28px;" >Jiayi Fu<sup>1</sup></a>,<br>
-    <a href="" style="font-size: 28px;" >Hyunhee Park<sup>3</sup></a>, 
-    <a href="" style="font-size: 28px;" >Zikun Liu<sup>2</sup></a>,
-    <a href="https://scholar.google.com/citations?user=RZLYwR0AAAAJ&hl=zh-CN&oi=ao" style="font-size: 28px;" >Chun-Le Guo<sup>1,&dagger;</sup></a>,
-    <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1</sup></a>,
+    <a href="" style="font-size: 28px;" >Hyunhee Park<sup>4</sup></a>, 
+    <a href="" style="font-size: 28px;" >Zikun Liu<sup>3</sup></a>,
+    <a href="https://scholar.google.com/citations?user=RZLYwR0AAAAJ&hl=zh-CN&oi=ao" style="font-size: 28px;" >Chun-Le Guo<sup>1,2,&dagger;</sup></a>,
+    <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1,2</sup></a>,
     <br><br>
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>1</sup>VCIP, CS, Nankai University</span> <br>
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>2</sup>Samsung Research, China, Beijing (SRC-B)</span> <br>
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>3</sup>The Department of Camera Innovation Group, Samsung Electronics</span> <br>
+
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>1</sup>VCIP, CS, Nankai University, </span>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>2</sup>NKIARI, Shenzhen Futian</span> <br>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>3</sup>Samsung Research, China, Beijing (SRC-B)</span> <br>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>4</sup>The Department of Camera Innovation Group, Samsung Electronics</span> <br>
     <span style="font-size: 20px; font-weight: bold; ;"><sup>*</sup>Equal contribution. <sup>&dagger;</sup>Corresponding author.</span> <br>
     
   </p>
@@ -35,7 +37,7 @@ onMounted(() => {
       <a href="" target="_blank">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="" target="_blank">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="" target="_blank">[Dataset]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="" target="_blank">[BibTeX]</a>
+      <a href="" target="_blank">[Demo]</a>
   </p>
 
   <figure>
@@ -126,7 +128,7 @@ onMounted(() => {
 
   </div>
 
-  <div class="content">
+<div class="content">
   <h2 style="text-align:center;">Abstract</h2>
   <p>Blind face restoration is a highly ill-posed problem due to the lack of necessary context. Although existing methods produce high-quality outputs, they often fail to faithfully preserve the individual's identity. In this paper, we propose a personalized face restoration method, FaceMe, based on a diffusion model. Given single or a few reference images, we use an identity encoder to extract identity-related features, which serve as prompts to guide the diffusion model in restoring high-quality and identity-consistent facial images. By simply combining identity-related features, we effectively minimize the impact of identity-irrelevant features during training and supports any number of reference image inputs during inference. Additionally, thanks to the robustness of the identity encoder, synthesized images can be used as reference images during training, and identity changing during inference does not require fine-tuning the model. We also propose a pipeline for constructing a reference image training pool that simulates the poses and expressions that may appear in real-world scenarios. Experimental results demonstrate that our FaceMe can restore high-quality facial images while maintaining identity consistency, achieving excellent performance and robustness. </p>
 </div>
@@ -178,6 +180,7 @@ onMounted(() => {
   </div>
 
   <div class="content">
+    <h2 style="text-align:center;">Interactive Comparison</h2>
   <!-- 1 -->
   <div class="row">
     <ImgComparisonSlider>
@@ -331,11 +334,17 @@ onMounted(() => {
       />
     </ImgComparisonSlider>
   </div>
+  <p>
+        You can slide the images to clearly observe the differences between the input on the left and the output on the right. 
+        The first row is from the LFW-Test; the second row is from the WebPhoto-Test; 
+        and the third row is from the Wider-Test. 
+        FaceMe can restore high-fidelity and high-quality images, while previous methods produce the unrealistic artifacts.
+    </p>
 </div>
 
 
-  <div class="content" style="text-align: center;">
-    <h2>BibTex</h2>
+  <div class="content">
+    <h2 style="text-align: center;">BibTex</h2>
     <!-- <code> @article{ruiz2022dreambooth,<br>
     &nbsp;&nbsp;title={DreamBooth: Fine Tuning Text-to-image Diffusion Models for Subject-Driven Generation},<br>
     &nbsp;&nbsp;author={Ruiz, Nataniel and Li, Yuanzhen and Jampani, Varun and Pritch, Yael and Rubinstein, Michael and Aberman, Kfir},<br>
@@ -344,9 +353,16 @@ onMounted(() => {
     } </code>  -->
   </div>
 
-  <div class="content" id="acknowledgements" style="text-align: center;">
-    <p><strong>Acknowledgements</strong>
+  <div class="content">
+    <h4>Acknowledgements</h4>
+    <p style="font-size: 15px; font-weight: bold;">This work is funded by the National Natural Science Foundation of China (62306153) and the Fundamental Research Funds for the Central Universities (Nankai University, 07063243143). 
+      The computational devices of this work is supported by the Supercomputing Center of Nankai University (NKSC). 
     </p>
+    <p style="font-size: 15px; font-weight: bold;">
+      We sincerely thank our friend <a href="https://github.com/Men1scus">Zihen Zhang</a> for his assistance in developing this website.
+    </p>
+    
+
   </div>
 
   <footer class="footer">
@@ -381,7 +397,7 @@ a, a:visited {
   display: inline-block; /* 保持图片为行内块元素 */
 }
 .content {
-  font-size: 24px;
+  font-size: 21px;
   width: 1000px;
   padding: 25px 50px;
   margin: 25px auto;
