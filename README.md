@@ -1,5 +1,5 @@
-# Vue 3 + TypeScript + Vite
+# This is the official project page for the paper
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+>**FaceMe: Robust Blind Face Restoration With Personal Identification**<br>  [Siyu Liu<sup>1,*</sup>](), [Zhengpeng Duan<sup>1,*</sup>](), [Jia OuYang<sup>3</sup>](), [Jiayi Fu<sup>1</sup>](), [Hyunhee Park<sup>4</sup>](), [Zikun Liu<sup>3</sup>](), [Chunle Guo<sup>1,2</sup>](), [Chongyi Li<sup>1,2</sup>]() <br>
+> <sup>1</sup> VCIP, CS, Nankai University, <sup>2</sup> NKIARI, Shenzhen Futian, <sup>3</sup> Samsung Research, China, Beijing (SRC-B), <sup>4</sup> The Department of Camera Innovation Group, Samsung Electronics
+> <sup>*</sup>Equal contribution. <sup>&dagger;</sup>Corresponding author.
