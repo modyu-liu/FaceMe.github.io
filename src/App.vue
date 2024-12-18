@@ -359,7 +359,7 @@ onMounted(() => {
       The computational devices of this work is supported by the Supercomputing Center of Nankai University (NKSC). 
     </p>
     <p style="font-size: 15px; font-weight: bold;">
-      We sincerely thank our friend <a href="https://github.com/Men1scus">Zihen Zhang</a> for his assistance in developing this website.
+      We sincerely thank our friend <a href="https://github.com/Men1scus">Ziheng Zhang</a> for his assistance in developing this website.
     </p>
     
 
