@@ -73,16 +73,28 @@ onMounted(() => {
       <img
         slot="first"
         style="width: 100%"
-        src="/pair_result/huang/degraded_level_9.png"
+        src="/pair_result/hinton/lq.png"
       />
       <img
         slot="second"
         style="width: 100%"
-        src="/pair_result/huang/huang3.png"
+        src="/pair_result/hinton/sr.png"
+      />
+    </ImgComparisonSlider>
+    <ImgComparisonSlider>
+      <img
+        slot="first"
+        style="width: 100%"
+        src="/pair_result/trump/degraded_level_9.png"
+      />
+      <img
+        slot="second"
+        style="width: 100%"
+        src="/pair_result/trump/trump.png"
       />
     </ImgComparisonSlider>
   </div>
-
+<!-- 
   <div class="row">
     <ImgComparisonSlider>
       <img
@@ -108,8 +120,45 @@ onMounted(() => {
         src="/pair_result/trump/trump.png"
       />
     </ImgComparisonSlider>
+  </div> -->
+  <div class="row">
+    <ImgComparisonSlider>
+      <img
+        slot="first"
+        style="width: 100%"
+        src="/pair_result/Taylor/lq.png"
+      />
+      <img
+        slot="second"
+        style="width: 100%"
+        src="/pair_result/Taylor/20241217143046.png"
+      />
+    </ImgComparisonSlider>
+    <ImgComparisonSlider>
+      <img
+        slot="first"
+        style="width: 100%"
+        src="/pair_result/queen/lq.png"
+      />
+      <img
+        slot="second"
+        style="width: 100%"
+        src="/pair_result/queen/sr.png"
+      />
+    </ImgComparisonSlider>
+    <ImgComparisonSlider>
+      <img
+        slot="first"
+        style="width: 100%"
+        src="/pair_result/feifei/lq.png"
+      />
+      <img
+        slot="second"
+        style="width: 100%"
+        src="/pair_result/feifei/sr.png"
+      />
+    </ImgComparisonSlider>
   </div>
-
   <!-- <div class="row">
     <ImgComparisonSlider>
       <img
