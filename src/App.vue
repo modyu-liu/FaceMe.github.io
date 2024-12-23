@@ -73,12 +73,12 @@ onMounted(() => {
       <img
         slot="first"
         style="width: 100%"
-        src="/pair_result/hinton/lq.png"
+        src="/pair_result/hinton/lq_1.png"
       />
       <img
         slot="second"
         style="width: 100%"
-        src="/pair_result/hinton/sr.png"
+        src="/pair_result/hinton/sr_1.png"
       />
     </ImgComparisonSlider>
     <ImgComparisonSlider>
