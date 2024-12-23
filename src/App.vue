@@ -73,12 +73,12 @@ onMounted(() => {
       <img
         slot="first"
         style="width: 100%"
-        src="/pair_result/hinton/lq_1.png"
+        src="/pair_result/hinton/lq_2.png"
       />
       <img
         slot="second"
         style="width: 100%"
-        src="/pair_result/hinton/sr_1.png"
+        src="/pair_result/hinton/sr_2.png"
       />
     </ImgComparisonSlider>
     <ImgComparisonSlider>
@@ -150,12 +150,12 @@ onMounted(() => {
       <img
         slot="first"
         style="width: 100%"
-        src="/pair_result/feifei/lq.png"
+        src="/pair_result/feifei/lq_1.png"
       />
       <img
         slot="second"
         style="width: 100%"
-        src="/pair_result/feifei/sr.png"
+        src="/pair_result/feifei/sr_1.png"
       />
     </ImgComparisonSlider>
   </div>
