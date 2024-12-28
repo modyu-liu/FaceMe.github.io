@@ -35,8 +35,8 @@ onMounted(() => {
   
   <p style="text-align: center; font-size: 1.5em;">
       <a href="" target="_blank">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="" target="_blank">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="" target="_blank">[Dataset]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/modyu-liu/FaceMe" target="_blank">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://huggingface.co/datasets/thomas2modyu/FaceMe" target="_blank">[Dataset]</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="" target="_blank">[Demo]</a>
   </p>
 
