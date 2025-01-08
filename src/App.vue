@@ -25,7 +25,7 @@ onMounted(() => {
     <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1,4</sup></a>
     <br><br>
 
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>1</sup>VCIP, CS, Nankai University, </span>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>1</sup>VCIP, CS, Nankai University, </span> <br>
     <span style="font-size: 20px; font-weight: bold; ;"><sup>2</sup>Samsung Research, China, Beijing (SRC-B)</span> <br>
     <span style="font-size: 20px; font-weight: bold; ;"><sup>3</sup>The Department of Camera Innovation Group, Samsung Electronics</span> <br>
     <span style="font-size: 20px; font-weight: bold; ;"><sup>4</sup>NKIARI, Shenzhen Futian</span> <br>
