@@ -17,18 +17,18 @@ onMounted(() => {
   <p id="authors" style="text-align: center;">
     <a href="" style="font-size: 28px;" >Siyu Liu<sup>1,*</sup></a>, 
     <a href="https://adam-duan.github.io/" style="font-size: 28px;" >Zheng-Peng Duan<sup>1,*</sup></a>, 
-    <a href="" style="font-size: 28px;" >Jia OuYang<sup>3</sup></a>, 
+    <a href="" style="font-size: 28px;" >Jia OuYang<sup>2</sup></a>, 
     <a href="" style="font-size: 28px;" >Jiayi Fu<sup>1</sup></a>,<br>
-    <a href="" style="font-size: 28px;" >Hyunhee Park<sup>4</sup></a>, 
-    <a href="" style="font-size: 28px;" >Zikun Liu<sup>3</sup></a>,
-    <a href="https://scholar.google.com/citations?user=RZLYwR0AAAAJ&hl=zh-CN&oi=ao" style="font-size: 28px;" >Chun-Le Guo<sup>1,2,&dagger;</sup></a>,
-    <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1,2</sup></a>
+    <a href="" style="font-size: 28px;" >Hyunhee Park<sup>3</sup></a>, 
+    <a href="" style="font-size: 28px;" >Zikun Liu<sup>2</sup></a>,
+    <a href="https://scholar.google.com/citations?user=RZLYwR0AAAAJ&hl=zh-CN&oi=ao" style="font-size: 28px;" >Chun-Le Guo<sup>1,4,&dagger;</sup></a>,
+    <a href="https://li-chongyi.github.io/" style="font-size: 28px;">Chongyi Li<sup>1,4</sup></a>
     <br><br>
 
     <span style="font-size: 20px; font-weight: bold; ;"><sup>1</sup>VCIP, CS, Nankai University, </span>
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>2</sup>NKIARI, Shenzhen Futian</span> <br>
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>3</sup>Samsung Research, China, Beijing (SRC-B)</span> <br>
-    <span style="font-size: 20px; font-weight: bold; ;"><sup>4</sup>The Department of Camera Innovation Group, Samsung Electronics</span> <br>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>2</sup>Samsung Research, China, Beijing (SRC-B)</span> <br>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>3</sup>The Department of Camera Innovation Group, Samsung Electronics</span> <br>
+    <span style="font-size: 20px; font-weight: bold; ;"><sup>4</sup>NKIARI, Shenzhen Futian</span> <br>
     <span style="font-size: 20px; font-weight: bold; ;"><sup>*</sup>Equal contribution. <sup>&dagger;</sup>Corresponding author.</span> <br>
     
   </p>
