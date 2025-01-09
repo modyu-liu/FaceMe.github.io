@@ -394,12 +394,12 @@ onMounted(() => {
 
   <div class="content">
     <h2 style="text-align: center;">BibTex</h2>
-    <!-- <code> @article{ruiz2022dreambooth,<br>
-    &nbsp;&nbsp;title={DreamBooth: Fine Tuning Text-to-image Diffusion Models for Subject-Driven Generation},<br>
-    &nbsp;&nbsp;author={Ruiz, Nataniel and Li, Yuanzhen and Jampani, Varun and Pritch, Yael and Rubinstein, Michael and Aberman, Kfir},<br>
-    &nbsp;&nbsp;booktitle={arXiv preprint arxiv:2208.12242},<br>
-    &nbsp;&nbsp;year={2022}<br>
-    } </code>  -->
+    <code> @inproceedings{liu2025faceme,<br>
+    &nbsp;&nbsp;title={FaceMe: Robust Blind Face Restoration with Personal Identification},<br>
+    &nbsp;&nbsp;author={Liu, Siyu and Duan, Zheng-Peng and OuYang, Jia and Fu, Jiayi and Park, Hyunhee and Liu, Zikun and Guo, Chunle and Li, Chongyi},<br>
+    &nbsp;&nbsp;booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},<br>
+    &nbsp;&nbsp;year={2025}<br>
+    } </code> 
   </div>
 
   <div class="content">
