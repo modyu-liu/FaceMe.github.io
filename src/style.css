@@ -77,3 +77,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.bibtex-code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: auto;
+}

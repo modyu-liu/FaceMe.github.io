@@ -37,7 +37,7 @@ onMounted(() => {
       <a href="" target="_blank">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="https://github.com/modyu-liu/FaceMe" target="_blank">[Code]</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="https://huggingface.co/datasets/thomas2modyu/FaceMe" target="_blank">[Dataset]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="" target="_blank">[Demo]</a>
+      <!-- <a href="" target="_blank">[Demo]</a> -->
   </p>
 
   <figure>
@@ -392,15 +392,20 @@ onMounted(() => {
 </div>
 
 
-  <div class="content">
-    <h2 style="text-align: center;">BibTex</h2>
-    <code> @inproceedings{liu2025faceme,<br>
-    &nbsp;&nbsp;title={FaceMe: Robust Blind Face Restoration with Personal Identification},<br>
-    &nbsp;&nbsp;author={Liu, Siyu and Duan, Zheng-Peng and OuYang, Jia and Fu, Jiayi and Park, Hyunhee and Liu, Zikun and Guo, Chunle and Li, Chongyi},<br>
-    &nbsp;&nbsp;booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},<br>
-    &nbsp;&nbsp;year={2025}<br>
-    } </code> 
-  </div>
+<div class="content">
+  <h4>BibTex</h4>
+  <pre class="bibtex-code">
+    <code>
+    @inproceedings{liu2025faceme,
+      title={FaceMe: Robust Blind Face Restoration with Personal Identification},
+      author={Liu, Siyu and Duan, Zheng-Peng and OuYang, Jia and Fu, Jiayi and Park,
+              Hyunhee and Liu, Zikun and Guo, Chunle and Li, Chongyi},
+      booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+      year={2025}
+    }
+    </code>
+  </pre>
+</div>
 
   <div class="content">
     <h4>Acknowledgements</h4>
